@@ -31,6 +31,20 @@
     box-sizing: border-box;
     border: 2px solid #000;
   }
+
+  #plaats {
+    font-size: 30px;
+  }
+
+  #via {
+    font-size: 20px;
+  }
+
+  #blauw {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+  }
   
   #right {
     width: 128px;
