@@ -5,18 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weekopdracht - NS-Treinbord</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/css/klok.js"></script>
   </head>
   <body>
     <div id="container">
       <div id="left">
-        <!-- hier komt de klok -->
+        <div id="klok">
+          <div id="wijzer-uur"></div>
+          <div id="wijzer-min"></div>
+          <div id="wijzer-sec">
+            <div class="line"></div>
+            <div class="circle"></div>
+            <div class="line"></div>
+          </div>
+          <div id="minuten"></div>
+          <div id="logo"></div>
+        </div>
       </div>
       <div id="middle">
         <div id="screen">
             <div id=" tijd">10 minuten</div>
             <div id="plaats">Heerlen</div>
             <div id="via">via s'Hertogenbosch, Eindhoven, Weert, Roermond en Stittard</div>
-            <div id="blauw"></div>
+            <div id="intercity"><img src="assets/img/ns_logo.png" id="ns_logo"></div>
+            <div id="blauw">
+              <div id="hierna">Hierna/next: 08:54 IC Venlo</div>
+            </div>
         </div>
       </div>
 
@@ -31,6 +45,8 @@
 
         </div>
       </div>
+
+      
       
   </body>
 </html>

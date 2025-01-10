@@ -17,7 +17,7 @@
   #middle {
     width: 568px;
     height: 339px;
-    background-color: rgb(0, 0, 106);
+    background-color: rgb(0, 0, 218);
     padding: 35px;
     box-sizing: border-box;
     border: 2px solid #000;
@@ -41,15 +41,21 @@
   }
 
   #blauw {
-    width: 100px;
-    height: 100px;
-    background-color: blue;
+    width: 490px;
+    height: 20px;
+    margin-left: -35px;
+    margin-top: 108px;
+    background-color: rgb(0, 0, 106);
+  }
+
+  #hierna {
+    color: white;
   }
   
   #right {
     width: 128px;
     height: 335px;
-    background-color: rgb(0, 0, 106);
+    background-color: rgb(0, 0, 218);
     border: 2px solid #000;
   }
   
@@ -65,21 +71,21 @@
   #blauwvierkantrechts {
     width: 20px;
     height: 20px;
-    background-color: rgb(0, 0, 106);
+    background-color: rgb(0, 0, 218);
     margin-left: 0px;
     margin-top: 0px;
   }
   
   
   #wit_vierkant_spoor{
-      color: rgb(0, 0, 106);
+      color: rgb(0, 0, 218);
       font-size:12px;
       position:absolute;
       top:6px;
       left:27px;
   }
   #wit_vierkant_18{
-      color: rgb(0, 0, 106);
+      color: rgb(0, 0, 218);
       font-size:50px;
       font-weight: bold;
       position:absolute;
@@ -87,7 +93,7 @@
       left:24px;
   }
   #wit_vierkant_b{
-      color: rgb(0, 0, 106);
+      color: rgb(0, 0, 218);
       font-size:19px;
       font-weight: bold;
       position:absolute;
@@ -95,6 +101,164 @@
       left:79px;
   }
   
-  body{
-      background-image:url("../img/treinbord.webp");
+  #ns_logo {
+    float: right;
+    width: 100px;
+    height: 50px;
+    margin-top: -122px;
   }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #klok {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin-left: 15px;
+    margin-top: 20px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: inset 0 2px 36px rgba(0,0,0,0.3), inset 0 0 72px 72px rgba(0,0,200,0.05);
+    border: 10px solid gray;
+  
+    opacity: 0;
+    transition: all 0.2s;
+  }
+  body.loaded #klok {
+    opacity: 1;
+  }
+  
+    #wijzer-uur,
+    #wijzer-min,
+    #wijzer-sec {
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      margin-left: -2.7px;
+      width: 5.4px;
+    }
+  
+    body.loaded #wijzer-uur,
+    body.loaded #wijzer-min,
+    body.loaded #wijzer-sec {
+      transition: transform 1s;
+    }
+  
+    #wijzer-uur,
+    #wijzer-min {
+      background: rgb(0, 0, 106);
+      border-radius: 0 0 2.7px 2.7px;
+    }
+  
+    #wijzer-uur,
+    #wijzer-min,
+    #wijzer-sec .line,
+    #wijzer-sec .circle {
+      box-shadow: -10px 5px 10px rgba(0,0,0,0.1);
+    }
+  
+    #wijzer-uur {
+      margin-top: -9px;
+      height: 60px;
+  
+      transform-origin: 2.7px 9px;
+    }
+  
+    #wijzer-min {
+      margin-top: -18px;
+      height: 100px;
+  
+      transform-origin: 2.7px 18px;
+    }
+  
+    #wijzer-sec {
+      margin-top: -9px;
+      height: 72px;
+  
+      transform-origin: 2.7px 9px;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+      #wijzer-sec:before {
+        content: "";
+        position: absolute;
+        top: 7.2px;
+        width: 3.6px;
+        height: 3.6px;
+        background: #990000;
+        border-radius: 3.6px;
+      }
+      #wijzer-sec .line {
+        background: #990000;
+        width: 1.8px;
+        height: 27px;
+      }
+      #wijzer-sec .line:first-child {
+        height: 36px;
+      }
+      #wijzer-sec .line:last-child {
+        height: 18px;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+      }
+      #wijzer-sec .circle {
+        border: 1.8px solid #990000;
+        border-radius: 100%;
+        width: 7.2px;
+        height: 7.2px;
+      }
+  
+      #minuten {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+      }
+        #minuten .minuut {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-left: -5.4px;
+          margin-top: -0.9px;
+          width: 10.8px;
+          height: 2.7px;
+    
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+        #minuten .minuut:before {
+          content: "";
+          display: block;
+          background: #1441AD;
+          width: 1.8px;
+          height: 1.8px;
+          border-radius: 5.4px;
+        }
+        #minuten .minuut:nth-child(5n+1):before {
+          width: 10.8px;
+          height: 5.4px;
+        }
+
+      
+
+
+      
+
+
